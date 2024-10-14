@@ -6,13 +6,7 @@
     </div>
   
     <div class="col mx-0 conteudo">
-      <Formulario @aoSalvarTarefa="salvarTarefa"/>
-      <div>
-        <Tarefa :key="index" v-for="(tarefa,index) in tarefas" :tarefa="tarefa"/>
-        <Card v-if="tarefas.length === 0">
-          <p class="pt-2 ps-2 ">Você não está muito produtivo hoje :( </p>
-        </Card>
-      </div>
+      <router-view></router-view>
     </div>
     
   </main>
@@ -22,25 +16,18 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
-import Formulario from './components/Formulario.vue';
-import Tarefa from './components/Tarefa.vue';
-import ITarefa from './interfaces/ITarefa';
-import Card from './components/Card.vue';
+
 
 
 export default defineComponent({
   name: 'App',
-  components:{ Card,BarraLateral,Formulario,Tarefa},
+  components:{ BarraLateral },
   data(){
     return{
-      tarefas: [] as ITarefa[],
       modoEscuroAtivo: false
     }
   },
   methods:{
-    salvarTarefa(tarefa: ITarefa){
-      this.tarefas.push(tarefa)
-    },
     trocarTema(modoEscuroAtivo : boolean){
       this.modoEscuroAtivo= modoEscuroAtivo
     }

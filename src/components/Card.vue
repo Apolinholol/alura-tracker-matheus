@@ -12,7 +12,7 @@
         data(){
             return{
                 estilos: {
-                    // ou bacgroundColor: 'wheat'
+                    // ou backgroundColor: 'wheat'
                     background: 'wheat'
             }
         }
