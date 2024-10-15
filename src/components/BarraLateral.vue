@@ -6,6 +6,16 @@
         <button class="btn btn-secondary mt-5 " @click="alterarTema"> 
             {{ textoBotao }} 
         </button>
+        <nav>
+            <ul class="list-group mt-4 p-2 mx-5 text-start">
+                <li class="list-group-item border-0 ">
+                    <router-link class="link" to="/"><i class="bi bi-chevron-double-right me-2"></i>Tarefas</router-link> 
+                </li>
+                <li class="list-group-item border-0 ">
+                    <router-link class="link" to="/projetos"><i class="bi bi-chevron-double-right me-2"></i>Projetos</router-link> 
+                </li>
+            </ul>
+        </nav>
     </header>
 </template>
 
@@ -51,4 +61,19 @@
         height:auto;
     }
    } 
+.panel li{
+    margin: 8px 0;
+}
+
+.link,.list-group-item{
+    text-decoration: none;
+    background-color: #0D3B66;
+    color: #fff;
+}
+.link:hover{
+    color:#FAF0CA;
+}
+.link.router-link-active{
+    color: #FAF0CA
+}
 </style>

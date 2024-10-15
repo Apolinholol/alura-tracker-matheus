@@ -22,6 +22,9 @@ export default defineComponent({
            {{ tarefa.descricao || 'Tarefa sem descrição'}}
         </div>
         <div class="col py-3 ps-2">
+            {{ tarefa.projeto?.nome || 'N/D' }}
+        </div>
+        <div class="col py-3 ps-2">
             <Cronometro :tempo-em-segundos="tarefa.duracaoEmSegundos"/>
         </div>
  
