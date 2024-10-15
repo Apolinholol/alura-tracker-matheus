@@ -8,16 +8,22 @@ import Card from './Card.vue';
 export default defineComponent({
     name:"AppTarefa",
     components:{Cronometro, Card},
+    emits: ['aoTarefaClicada'],
     props:{
        tarefa:{
         type : Object as PropType<ITarefa>, required: true
        } 
+    },
+    methods:{
+        tarefaClicada():void{
+            this.$emit('aoTarefaClicada',this.tarefa)
+        }
     }
 })
 </script>
 
 <template>
-    <Card>
+    <Card >
         <div class="col py-3 ps-2 " >
            {{ tarefa.descricao || 'Tarefa sem descrição'}}
         </div>
