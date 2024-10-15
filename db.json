@@ -3,6 +3,10 @@
     {
       "id": "e4e1",
       "nome": "Projeto Abigail-4"
+    },
+    {
+      "id": "8c37",
+      "nome": "Alura tracker333"
     }
   ],
   "tarefas": [
@@ -28,6 +32,15 @@
       "id": "f3c5",
       "duracaoEmSegundos": 0,
       "descricao": ""
+    },
+    {
+      "id": "4d87",
+      "duracaoEmSegundos": 1,
+      "descricao": "sasa",
+      "projeto": {
+        "id": "e4e1",
+        "nome": "Projeto Abigail-4"
+      }
     }
   ]
 }
