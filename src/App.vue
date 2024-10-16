@@ -32,7 +32,7 @@ export default defineComponent({
   },
   methods:{
     trocarTema(modoEscuroAtivo : boolean){
-      this.modoEscuroAtivo= modoEscuroAtivo
+      this.modoEscuroAtivo = modoEscuroAtivo
     }
   }
 

@@ -33,7 +33,10 @@ export default defineComponent({
         <div class="col py-3 ps-2">
             <Cronometro :tempo-em-segundos="tarefa.duracaoEmSegundos"/>
         </div>
- 
+    <!-- Deve ser implementado o botão de excluir tarefa -->
+        <div>
+            <button class="btn bi bi-trash me-3 mt-2"></button>
+        </div>
     </Card>
 </template>
 

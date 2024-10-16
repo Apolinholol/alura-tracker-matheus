@@ -7,6 +7,10 @@
     {
       "id": "8c37",
       "nome": "Alura tracker333"
+    },
+    {
+      "id": "029d",
+      "nome": "romanof"
     }
   ],
   "tarefas": [
@@ -40,6 +44,20 @@
       "projeto": {
         "id": "e4e1",
         "nome": "Projeto Abigail-4"
+      }
+    },
+    {
+      "id": "17c6",
+      "duracaoEmSegundos": 1,
+      "descricao": ""
+    },
+    {
+      "id": "7809",
+      "duracaoEmSegundos": 2,
+      "descricao": "sasa",
+      "projeto": {
+        "id": "029d",
+        "nome": "romanof"
       }
     }
   ]

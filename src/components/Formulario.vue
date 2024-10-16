@@ -28,34 +28,36 @@
 <script lang="ts">
 import { useStore } from 'vuex';
 import Temporizador from './Temporizador.vue';
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import { key } from '@/store';
 
 export default defineComponent({
     name:'AppFormulario',
-    data() {
-        return{
-            descricao:"",
-            idProjeto:""
-        }
-    },
     emits: ["aoSalvarTarefa"],
-    methods:{
-        salvarTarefa(tempoDecorrido: number):void{
-            this.$emit('aoSalvarTarefa',{
+    components:{Temporizador},
+    setup(props,{emit}){
+
+        const store = useStore(key)
+
+
+        const descricao = ref("")
+        const idProjeto = ref("")
+        const projetos = computed( ()=> store.state.projeto.projetos)
+
+        const salvarTarefa = (tempoDecorrido: number):void =>{
+            emit('aoSalvarTarefa',{
                 duracaoEmSegundos: tempoDecorrido,
-                descricao: this.descricao,
-                projeto: this.projetos.find(proj => proj.id == this.idProjeto),
+                descricao: descricao.value,
+                projeto: projetos.value.find(proj => proj.id == idProjeto.value),
             }),
             //Limpa o input
-            this.descricao=""
+            descricao.value=""
         }
-    },
-    components:{Temporizador},
-    setup(){
-        const store = useStore(key)
         return {
-            projetos: computed( ()=> store.state.projeto.projetos)
+            descricao,
+            idProjeto,
+            projetos,
+            salvarTarefa
         }
     }
 })
